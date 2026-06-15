@@ -250,7 +250,7 @@ function HeroVisual() {
 function SplineBackdrop() {
   return (
     <div
-      className="absolute inset-y-0 left-[-12%] z-0 hidden w-[92%] overflow-hidden sm:block lg:left-[-6%] lg:w-[78%]"
+      className="absolute bottom-[-250px] left-[-12%] top-[250px] z-0 hidden w-[92%] overflow-hidden bg-white sm:block lg:left-[-6%] lg:w-[78%]"
       style={{
         maskImage: 'radial-gradient(ellipse 70% 72% at 48% 45%, black 28%, transparent 100%)',
         WebkitMaskImage: 'radial-gradient(ellipse 70% 72% at 48% 45%, black 28%, transparent 100%)',
@@ -307,10 +307,9 @@ function App() {
       <Header />
 
       <main>
-        <section id="top" className="relative isolate min-h-screen px-5 pb-16 pt-32 sm:px-8 sm:pt-40 lg:px-12">
+        <section id="top" className="relative isolate min-h-screen bg-white px-5 pb-16 pt-32 sm:px-8 sm:pt-40 lg:px-12">
           <SplineBackdrop />
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-paper/70" />
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-paper/25 via-transparent to-paper/65" />
+          <div className="pointer-events-none absolute inset-0 z-[1] bg-white/[0.72]" />
           <div className="pointer-events-none absolute left-[-10rem] top-16 z-[2] h-96 w-96 rounded-full bg-violet/10 blur-3xl" />
           <div className="pointer-events-none absolute right-[-8rem] top-52 z-[2] h-80 w-80 rounded-full bg-cyan/20 blur-3xl" />
           <div className="pointer-events-none relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
