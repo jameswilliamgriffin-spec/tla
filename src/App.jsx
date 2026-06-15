@@ -202,47 +202,23 @@ function Header() {
   )
 }
 
-function HeroVisual() {
+function SplineBackdrop() {
   return (
-    <div className="relative mx-auto min-h-[430px] w-full max-w-[560px] lg:min-h-[590px]" aria-hidden="true">
-      <div className="absolute left-[8%] top-[8%] h-[70%] w-[76%] rotate-[-4deg] rounded-[3rem] bg-gradient-to-br from-violet via-[#8b73ff] to-[#39229f] shadow-[0_35px_80px_rgba(90,64,210,0.3)]" />
-      <div className="subtle-grid absolute right-[4%] top-[19%] h-[67%] w-[78%] rotate-[5deg] overflow-hidden rounded-[3rem] bg-[#fcfbf8] shadow-soft">
-        <div className="absolute -right-12 -top-12 h-56 w-56 rounded-full bg-cyan/50 blur-2xl" />
-        <div className="absolute -bottom-16 -left-10 h-60 w-60 rounded-full bg-coral/35 blur-3xl" />
-      </div>
-      <div className="glass absolute left-[12%] top-[22%] w-[70%] rounded-[2rem] p-5 shadow-card sm:p-7">
-        <div className="mb-8 flex items-center justify-between">
-          <span className="rounded-full bg-ink px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white">Your next move</span>
-          <div className="flex -space-x-2">
-            {['bg-cyan', 'bg-coral', 'bg-violet'].map((color) => (
-              <span key={color} className={`h-8 w-8 rounded-full border-2 border-white ${color}`} />
-            ))}
-          </div>
-        </div>
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-ink/45">Creative careers</p>
-        <p className="max-w-xs text-3xl font-semibold leading-tight tracking-[-0.04em] text-ink sm:text-4xl">
-          Make your ideas matter.
-        </p>
-        <div className="mt-8 flex items-end gap-2">
-          {[38, 58, 46, 76, 92, 66].map((height, index) => (
-            <span
-              key={height}
-              className={`w-full rounded-t-xl ${index === 4 ? 'bg-violet' : 'bg-ink/10'}`}
-              style={{ height: `${height}px` }}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="absolute bottom-[4%] right-[3%] flex items-center gap-3 rounded-2xl bg-ink px-4 py-3 text-white shadow-soft sm:right-0">
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-cyan text-ink"><Icon name="rise" className="h-5 w-5" /></span>
-        <span>
-          <span className="block text-[10px] uppercase tracking-wider text-white/50">Progress</span>
-          <span className="text-sm font-semibold">Built into every step</span>
-        </span>
-      </div>
-      <div className="absolute left-0 top-[9%] grid h-20 w-20 rotate-[-9deg] place-items-center rounded-[1.7rem] bg-coral shadow-card sm:h-24 sm:w-24">
-        <Icon name="spark" className="h-9 w-9 text-white" />
-      </div>
+    <div
+      className="pointer-events-none absolute inset-y-0 right-[-20%] hidden w-[105%] opacity-35 sm:block lg:right-[-12%] lg:w-[82%] lg:opacity-50"
+      aria-hidden="true"
+      style={{
+        maskImage: 'linear-gradient(to right, transparent 0%, black 22%, black 82%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 22%, black 82%, transparent 100%)',
+      }}
+    >
+      <iframe
+        src="https://my.spline.design/ribbonspherecopycopy-SlEPnPDxN7p76fHCQ0JkofEm-LTd/"
+        title="Decorative animated ribbon sphere"
+        className="h-full min-h-[760px] w-full scale-[1.08] border-0"
+        loading="eager"
+        tabIndex="-1"
+      />
     </div>
   )
 }
@@ -289,10 +265,12 @@ function App() {
 
       <main>
         <section id="top" className="relative min-h-screen px-5 pb-16 pt-32 sm:px-8 sm:pt-40 lg:px-12">
+          <SplineBackdrop />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper via-paper/95 to-paper/15 sm:via-paper/80 lg:via-paper/60" />
           <div className="absolute left-[-10rem] top-16 h-96 w-96 rounded-full bg-violet/10 blur-3xl" />
           <div className="absolute right-[-8rem] top-52 h-80 w-80 rounded-full bg-cyan/20 blur-3xl" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
-            <div>
+          <div className="relative mx-auto flex min-h-[calc(100vh-12rem)] max-w-7xl items-center">
+            <div className="relative z-10 max-w-4xl">
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-2 text-xs font-semibold shadow-sm backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-coral" />
                 Birmingham born. Future focused.
@@ -316,7 +294,6 @@ function App() {
                 <span>Production</span>
               </div>
             </div>
-            <HeroVisual />
           </div>
         </section>
 
