@@ -108,7 +108,7 @@ function CTAButton({ children, href, variant = 'primary', className = '' }) {
   return (
     <a
       href={href}
-      className={`group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet focus-visible:ring-offset-2 ${styles} ${className}`}
+      className={`pointer-events-auto group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet focus-visible:ring-offset-2 ${styles} ${className}`}
     >
       {children}
       <Icon name="arrow" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -249,19 +249,12 @@ function HeroVisual() {
 
 function SplineBackdrop() {
   return (
-    <div
-      className="absolute bottom-[-250px] left-[-12%] top-[250px] z-0 hidden w-[92%] overflow-hidden bg-white sm:block lg:left-[-6%] lg:w-[78%]"
-      style={{
-        maskImage: 'radial-gradient(ellipse 70% 72% at 48% 45%, black 28%, transparent 100%)',
-        WebkitMaskImage: 'radial-gradient(ellipse 70% 72% at 48% 45%, black 28%, transparent 100%)',
-      }}
-    >
-      <iframe
-        src="https://my.spline.design/ribbonspherecopycopy-SlEPnPDxN7p76fHCQ0JkofEm-LTd/"
-        title="Decorative animated ribbon sphere"
-        className="h-full min-h-[760px] w-full scale-[1.15] border-0 mix-blend-multiply"
-        loading="eager"
-      />
+    <div className="absolute left-[7%] top-[300px] z-0 hidden h-[560px] w-[48%] overflow-hidden rounded-[3.5rem] sm:block">
+      <hana-viewer
+        url="https://prod.spline.design/8t6t8usZdkt3sHIL-pEa/scene.hanacode"
+        aria-label="Interactive decorative ribbon sphere"
+        class="absolute left-1/2 top-1/2 block h-[820px] w-[1100px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-30"
+      ></hana-viewer>
     </div>
   )
 }
@@ -309,11 +302,10 @@ function App() {
       <main>
         <section id="top" className="relative isolate min-h-screen bg-white px-5 pb-16 pt-32 sm:px-8 sm:pt-40 lg:px-12">
           <SplineBackdrop />
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-white/[0.72]" />
           <div className="pointer-events-none absolute left-[-10rem] top-16 z-[2] h-96 w-96 rounded-full bg-violet/10 blur-3xl" />
           <div className="pointer-events-none absolute right-[-8rem] top-52 z-[2] h-80 w-80 rounded-full bg-cyan/20 blur-3xl" />
           <div className="pointer-events-none relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
-            <div className="pointer-events-auto">
+            <div>
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-2 text-xs font-semibold shadow-sm backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-coral" />
                 Birmingham born. Future focused.
