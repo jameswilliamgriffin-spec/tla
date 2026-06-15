@@ -249,12 +249,14 @@ function HeroVisual() {
 
 function SplineBackdrop() {
   return (
-    <div className="absolute left-[7%] top-[300px] z-0 hidden h-[560px] w-[48%] overflow-hidden rounded-[3.5rem] sm:block">
+    <div className="absolute left-[7%] top-[300px] z-0 hidden h-[560px] w-[48%] overflow-hidden bg-white sm:block">
       <hana-viewer
         url="https://prod.spline.design/8t6t8usZdkt3sHIL-pEa/scene.hanacode"
         aria-label="Interactive decorative ribbon sphere"
         class="absolute left-1/2 top-1/2 block h-[820px] w-[1100px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-30"
       ></hana-viewer>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[22%] bg-white" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[22%] bg-white" />
     </div>
   )
 }
